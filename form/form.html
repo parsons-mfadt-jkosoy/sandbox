@@ -1,0 +1,73 @@
+
+
+
+<?php
+	if(isset($_POST['name'])) {
+		$name = $_POST['name'];
+		$url = $_POST['url'];
+		$image = $_POST['image'];
+
+		$_FILES['whatever']
+
+		$mongo = new Mongo();
+		$db = $mongo->awesomest;
+
+		$thing = array();
+		$thing['name'] = $name;
+		$thing['url'] = $url;
+		$thing['image'] = $image;
+		$thing['wins'] = 0;
+		$thing['losses'] = 0;
+
+		$db->things->insert($thing);
+
+		echo "<h1>Success!</h1>";
+	}
+?>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>death blog</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 	<meta name="description" content="">
+    <meta name="author" content="">
+	<link rel="stylesheet" href="style.css" type="text/css" charset="utf-8" />
+	<link rel="stylesheet" href="css/stylesheet.css" type="text/css" charset="utf-8" />
+	<script src=""></script>
+	<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+	<div id="content">
+		
+		<form action="index.php" method="post">
+			<img src ="images/death.png">
+			<!-- <h1>WHENMYDEATHISIMMINENT </h1> -->
+			<p>If I have an incurable terminal illness or injury, and I will die <br>
+			imminently – meaning that a reasonably prudent physician, <br>
+			knowledgeable about the case and the treatment possibilities <br>
+			with respect to the medical conditions involved, would judge <br>
+			that I will live only a week or less even if lifesaving treatment <br>
+			or care is provided to me – the following may be withheld <br>
+			or withdrawn: (Be as specific as possible):<br></p>
+			<p>post: <input type="text" name="name" /></p>
+			<p><input type="submit" /></p>
+			
+		</form>
+	</div>	
+
+	<form action="index.php" method="post">                <!--  a form to insert more data to database. -->
+	<p>post: <input type="text" name="name" /></p>
+	<p>URL: <input type="text" name="url" /></p>
+	<p>Image: <input type="text" name="image" /></p>	
+	<p><input type="submit" /></p>
+</form>
+
+</body>
+</html>
+
+
